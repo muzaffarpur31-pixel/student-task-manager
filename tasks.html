@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Student Task Manager</h1>
+
+        <p class="subtitle">
+            Manage your daily tasks easily
+        </p>
+
+        <div id="deadlineAlert" class="deadline-alert">
+            <strong>⚠️ Upcoming Deadline</strong>
+            <p id="deadlineMessage">
+                No upcoming deadlines.
+            </p>
+        </div>
+
+        <div class="task-input">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter your task"
+            >
+
+            <input
+                type="date"
+                id="taskDeadline"
+            >
+
+            <select id="taskPriority">
+
+                <option value="Low">Low Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="High">High Priority</option>
+
+            </select>
+
+            <button onclick="addTask()">
+                Add Task
+            </button>
+
+        </div>
+
+        <div class="filters">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search tasks..."
+                oninput="showTasks()"
+            >
+
+            <select
+                id="statusFilter"
+                onchange="showTasks()"
+            >
+
+                <option value="All">All Tasks</option>
+                <option value="Pending">Pending</option>
+                <option value="Completed">Completed</option>
+
+            </select>
+
+        </div>
+
+        <div class="task-stats">
+
+            <div>
+                <h3 id="totalTasks">0</h3>
+                <p>Total Tasks</p>
+            </div>
+
+            <div>
+                <h3 id="pendingTasks">0</h3>
+                <p>Pending</p>
+            </div>
+
+            <div>
+                <h3 id="completedTasks">0</h3>
+                <p>Completed</p>
+            </div>
+
+        </div>
+
+        <h2>My Tasks</h2>
+
+        <ul id="taskList"></ul>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
